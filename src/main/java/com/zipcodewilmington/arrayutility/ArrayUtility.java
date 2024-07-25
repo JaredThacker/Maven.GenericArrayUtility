@@ -16,7 +16,6 @@ public class ArrayUtility<E>{
 
     public Integer countDuplicatesInMerge(Object[] arrayToMerge, E valueToEvaluate) {
         Integer dupes = 0;
-        ArrayUtility<E> arrayUtility = new ArrayUtility<>(inputArray);
         Object[] merged = new Object[inputArray.length + arrayToMerge.length];
         System.arraycopy(inputArray, 0, merged, 0, inputArray.length);
         System.arraycopy(arrayToMerge, 0, merged, inputArray.length, arrayToMerge.length);
@@ -30,7 +29,6 @@ public class ArrayUtility<E>{
     }
 
     public E[] removeValue(E valueToRemove) {
-        ArrayUtility<E> arrayUtility = new ArrayUtility<>(inputArray);
         ArrayList<Object> arrList = new ArrayList<Object>(Arrays.asList(inputArray));
         arrList.removeAll(Collections.singleton(valueToRemove));
         return arrList.toArray(Arrays.copyOf(inputArray, 0));
@@ -38,9 +36,6 @@ public class ArrayUtility<E>{
 
     public Integer getNumberOfOccurrences(E valueToEvaluate) {
         Integer occu = 0;
-
-        ArrayUtility<E> arrayUtility = new ArrayUtility<>(inputArray);
-
         for (Object obj : inputArray) {
             if (Objects.equals(obj, valueToEvaluate)){
                 occu++;
@@ -50,7 +45,6 @@ public class ArrayUtility<E>{
     }
 
     public E getMostCommonFromMerge(E[] arrayToMerge) {
-        ArrayUtility<E> arrayUtility = new ArrayUtility<>(inputArray);
         Object[] merged = new Object[inputArray.length + arrayToMerge.length];
         System.arraycopy(inputArray, 0, merged, 0, inputArray.length);
         System.arraycopy(arrayToMerge, 0, merged, inputArray.length, arrayToMerge.length);
